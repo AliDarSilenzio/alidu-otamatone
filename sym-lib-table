@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "AliBreath")(type "KiCad")(uri "${KIPRJMOD}/AliBreath.kicad_sym")(options "")(descr ""))
+)

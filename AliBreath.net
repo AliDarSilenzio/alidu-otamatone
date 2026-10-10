@@ -1,0 +1,2516 @@
+(export
+	(version "E")
+	(design
+		(source "/Users/alidusonoma/Documents/000_Nuovo_AliChord/AliBreath/AliBreath.kicad_sch")
+		(date "2026-10-10T12:11:32")
+		(tool "Eeschema 10.0.5")
+		(sheet
+			(number "1")
+			(name "/")
+			(tstamps "/")
+			(title_block
+				(title)
+				(company)
+				(rev)
+				(date)
+				(source "AliBreath.kicad_sch")
+				(comment
+					(number "1")
+					(value "")
+				)
+				(comment
+					(number "2")
+					(value "")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+	)
+	(components
+		(comp
+			(ref "C1")
+			(value "100n")
+			(footprint "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "C")
+				(description "Condensatore")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "e7a64cdf-bc1a-4f6b-8571-1388fd8297bc")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C2")
+			(value "1u")
+			(footprint "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "C")
+				(description "Condensatore")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "ad1f5484-a614-4d83-8b62-12c479204368")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C3")
+			(value "1n")
+			(footprint "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "C")
+				(description "Condensatore")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "8a059ef3-4498-478b-a664-d7f401d72732")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C4")
+			(value "100n")
+			(footprint "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "C")
+				(description "Condensatore")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "bc6e964e-b713-4893-b039-1e628b834c2b")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C5")
+			(value "10u")
+			(footprint "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "C")
+				(description "Condensatore")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "6af61f9a-164c-4740-bb13-36f14dbdd5c8")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C6")
+			(value "100n")
+			(footprint "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "C")
+				(description "Condensatore")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "5a5a3bc3-8109-42b4-8967-27d9bec2ba2a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J1")
+			(value "MIDI OUT")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "DIN5")
+				(description "Presa DIN 5 poli 180 gradi - MIDI OUT")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "8797de24-128c-403b-9113-199f3e60c0bd")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J2")
+			(value "Sustain")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "Jack_TS")
+				(description "Presa 6,35 mm mono (pedale a interruttore)")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "1ffa55a9-1b05-485d-8ac6-f441679e6ded")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J3")
+			(value "Espressione")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "Jack_TRS")
+				(description "Presa 6,35 mm stereo (pedale espressione)")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "560a34db-dd69-4335-821b-e65b4e15b625")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R1")
+			(value "4k7")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "R")
+				(description "Resistore")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "e09780f5-925f-4ac9-8f7c-2fa72ba10757")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R2")
+			(value "12k")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "R")
+				(description "Resistore")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "436af2be-5d9d-402a-b875-f3b34270055b")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R3")
+			(value "4k7")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "R")
+				(description "Resistore")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "e7bb8abd-2309-41cc-a71e-134b99396402")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R4")
+			(value "12k")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "R")
+				(description "Resistore")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "871243bd-edd6-4216-82ad-60ca72038d4a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R5")
+			(value "4k7")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "R")
+				(description "Resistore")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "413d0b74-a450-4025-ad46-de86699184a6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R6")
+			(value "4k7")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "R")
+				(description "Resistore")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "d2b27bbe-9855-45a7-8212-3eb99969e4fb")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R7")
+			(value "1k")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "R")
+				(description "Resistore")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "19331598-0b09-4a5a-b9b1-16a4b2a7f2cf")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R8")
+			(value "100k")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "R")
+				(description "Resistore")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "379b11e5-293d-4151-ba42-9f021f7753fc")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R9")
+			(value "33")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "R")
+				(description "Resistore")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "cf1edfa0-ada0-4dd7-9867-b6d6e1b221bb")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R10")
+			(value "10")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "R")
+				(description "Resistore")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "03e14574-a19f-400b-81e0-e90ecfd2e64e")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW1")
+			(value "Ottava -")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "SW_Push")
+				(description "Pulsante momentaneo verso massa")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "d2bb3c62-8b40-4cde-a7a9-b06c60665f02")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW2")
+			(value "Ottava +")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "SW_Push")
+				(description "Pulsante momentaneo verso massa")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "5c506f15-f1ae-4884-a251-7e55728e5511")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW3")
+			(value "Suono -")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "SW_Push")
+				(description "Pulsante momentaneo verso massa")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "3a334630-3331-4df4-b904-89b3002bdffb")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW4")
+			(value "Suono +")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "SW_Push")
+				(description "Pulsante momentaneo verso massa")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "4c7efaef-ffad-43b4-9d29-467dadb5b5af")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW5")
+			(value "Shift")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "SW_Push")
+				(description "Pulsante momentaneo verso massa")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "1d180019-1e4a-4cd4-833d-0bd96852d95d")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW6")
+			(value "Neg.harmony")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "SW_Push")
+				(description "Pulsante momentaneo verso massa")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "437ca0e1-bc47-45f2-82be-7d32a5031cb7")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U1")
+			(value "Teensy 4.1")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "Teensy_4.1")
+				(description "Modulo Teensy 4.1 (solo i piedini usati)")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "e5e38cac-039e-4c53-98fe-a6c36a75ed19")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "16")
+						)
+						(pin
+							(num "17")
+						)
+						(pin
+							(num "18")
+						)
+						(pin
+							(num "19")
+						)
+						(pin
+							(num "VUSB")
+						)
+						(pin
+							(num "3V3")
+						)
+						(pin
+							(num "GND")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U2")
+			(value "MPXV7002DP")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "MPXV7002DP")
+				(description "Sensore pressione differenziale +/-2 kPa")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "b1da0903-b839-4d26-99d1-f8aceb306c8b")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "7")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U3")
+			(value "Trill Craft")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "Trill_Craft")
+				(description "Bela Trill Craft - 30 canali capacitivi, I2C")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "92bbfae9-7fe2-486c-b006-f282dd9fc23c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U4")
+			(value "Trill Craft")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "AliBreath")
+				(part "Trill_Craft")
+				(description "Bela Trill Craft - 30 canali capacitivi, I2C")
+			)
+			(property
+				(name "Sheetname")
+				(value "AliBreath")
+			)
+			(property
+				(name "Sheetfile")
+				(value "AliBreath.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "75806e2f-5764-4ae2-a33a-f8c8a3d71c05")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+	)
+	(groups)
+	(variants)
+	(libparts
+		(libpart
+			(lib "AliBreath")
+			(part "C")
+			(description "Condensatore")
+			(fields
+				(field
+					(name "Reference") "C")
+				(field
+					(name "Value") "C")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Condensatore")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "AliBreath")
+			(part "DIN5")
+			(description "Presa DIN 5 poli 180 gradi - MIDI OUT")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "DIN5")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Presa DIN 5 poli 180 gradi - MIDI OUT")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "no_connect")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "3")
+					(type "no_connect")
+				)
+				(pin
+					(num "4")
+					(name "4")
+					(type "passive")
+				)
+				(pin
+					(num "5")
+					(name "5")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "AliBreath")
+			(part "Jack_TRS")
+			(description "Presa 6,35 mm stereo (pedale espressione)")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "Jack_TRS")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Presa 6,35 mm stereo (pedale espressione)")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "T")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "R")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "S")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "AliBreath")
+			(part "Jack_TS")
+			(description "Presa 6,35 mm mono (pedale a interruttore)")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "Jack_TS")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Presa 6,35 mm mono (pedale a interruttore)")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "T")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "S")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "AliBreath")
+			(part "MPXV7002DP")
+			(description "Sensore pressione differenziale +/-2 kPa")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "MPXV7002DP")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Sensore pressione differenziale +/-2 kPa")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "2")
+					(name "VS")
+					(type "power_in")
+				)
+				(pin
+					(num "3")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "4")
+					(name "VOUT")
+					(type "output")
+				)
+				(pin
+					(num "5")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "6")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "7")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "8")
+					(name "NC")
+					(type "no_connect")
+				)
+			)
+		)
+		(libpart
+			(lib "AliBreath")
+			(part "R")
+			(description "Resistore")
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "R")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistore")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "AliBreath")
+			(part "SW_Push")
+			(description "Pulsante momentaneo verso massa")
+			(fields
+				(field
+					(name "Reference") "SW")
+				(field
+					(name "Value") "SW_Push")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Pulsante momentaneo verso massa")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "AliBreath")
+			(part "Teensy_4.1")
+			(description "Modulo Teensy 4.1 (solo i piedini usati)")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "Teensy_4.1")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Modulo Teensy 4.1 (solo i piedini usati)")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "TX1")
+					(type "output")
+				)
+				(pin
+					(num "2")
+					(name "D2")
+					(type "bidirectional")
+				)
+				(pin
+					(num "3")
+					(name "D3")
+					(type "bidirectional")
+				)
+				(pin
+					(num "3V3")
+					(name "3V3")
+					(type "power_out")
+				)
+				(pin
+					(num "4")
+					(name "D4")
+					(type "bidirectional")
+				)
+				(pin
+					(num "5")
+					(name "D5")
+					(type "bidirectional")
+				)
+				(pin
+					(num "6")
+					(name "D6")
+					(type "bidirectional")
+				)
+				(pin
+					(num "7")
+					(name "D7")
+					(type "bidirectional")
+				)
+				(pin
+					(num "8")
+					(name "D8")
+					(type "bidirectional")
+				)
+				(pin
+					(num "14")
+					(name "A0")
+					(type "input")
+				)
+				(pin
+					(num "16")
+					(name "A2")
+					(type "input")
+				)
+				(pin
+					(num "17")
+					(name "A3")
+					(type "input")
+				)
+				(pin
+					(num "18")
+					(name "SDA")
+					(type "bidirectional")
+				)
+				(pin
+					(num "19")
+					(name "SCL")
+					(type "output")
+				)
+				(pin
+					(num "GND")
+					(name "GND")
+					(type "power_out")
+				)
+				(pin
+					(num "VUSB")
+					(name "VUSB")
+					(type "power_out")
+				)
+			)
+		)
+		(libpart
+			(lib "AliBreath")
+			(part "Trill_Craft")
+			(description "Bela Trill Craft - 30 canali capacitivi, I2C")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "Trill_Craft")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Bela Trill Craft - 30 canali capacitivi, I2C")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "power_in")
+				)
+				(pin
+					(num "2")
+					(name "SDA")
+					(type "bidirectional")
+				)
+				(pin
+					(num "3")
+					(name "SCL")
+					(type "input")
+				)
+				(pin
+					(num "4")
+					(name "GND")
+					(type "power_in")
+				)
+			)
+		)
+	)
+	(libraries
+		(library
+			(logical "AliBreath")
+			(uri "${KIPRJMOD}/AliBreath.kicad_sym")
+		)
+	)
+	(nets
+		(net
+			(code "1")
+			(name "+3V3")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "2")
+				(pinfunction "R_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R5")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R6")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R9")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "3V3")
+				(pinfunction "3V3_3V3")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U3")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U4")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "2")
+			(name "+5V")
+			(class "Default")
+			(node
+				(ref "C1")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C2")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C5")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R3")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "VUSB")
+				(pinfunction "VUSB_VUSB")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U2")
+				(pin "2")
+				(pinfunction "VS_2")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "3")
+			(name "GND")
+			(class "Default")
+			(node
+				(ref "C1")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C2")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C3")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C4")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C5")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C6")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J2")
+				(pin "2")
+				(pinfunction "S_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J3")
+				(pin "3")
+				(pinfunction "S_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "R2")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R4")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R8")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW2")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW3")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW4")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW5")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW6")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "GND")
+				(pinfunction "GND_GND")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U2")
+				(pin "3")
+				(pinfunction "GND_3")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U3")
+				(pin "4")
+				(pinfunction "GND_4")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U4")
+				(pin "4")
+				(pinfunction "GND_4")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "4")
+			(name "Net-(J1-Pad4)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "4")
+				(pinfunction "4_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "R9")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "5")
+			(name "Net-(J1-Pad5)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "5")
+				(pinfunction "5_5")
+				(pintype "passive")
+			)
+			(node
+				(ref "R10")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "6")
+			(name "Net-(J2-T)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "1")
+				(pinfunction "T_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "8")
+				(pinfunction "D8_8")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "7")
+			(name "Net-(J3-T)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "1")
+				(pinfunction "T_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R7")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R8")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "8")
+			(name "Net-(U1-A0)")
+			(class "Default")
+			(node
+				(ref "C4")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R1")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R2")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "14")
+				(pinfunction "A0_14")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "9")
+			(name "Net-(U1-A2)")
+			(class "Default")
+			(node
+				(ref "C6")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R3")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R4")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "16")
+				(pinfunction "A2_16")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "10")
+			(name "Net-(U1-A3)")
+			(class "Default")
+			(node
+				(ref "R7")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "17")
+				(pinfunction "A3_17")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "11")
+			(name "Net-(U1-D2)")
+			(class "Default")
+			(node
+				(ref "SW1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "2")
+				(pinfunction "D2_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "12")
+			(name "Net-(U1-D3)")
+			(class "Default")
+			(node
+				(ref "SW2")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "3")
+				(pinfunction "D3_3")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "13")
+			(name "Net-(U1-D4)")
+			(class "Default")
+			(node
+				(ref "SW3")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "4")
+				(pinfunction "D4_4")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "14")
+			(name "Net-(U1-D5)")
+			(class "Default")
+			(node
+				(ref "SW4")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "5")
+				(pinfunction "D5_5")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "15")
+			(name "Net-(U1-D6)")
+			(class "Default")
+			(node
+				(ref "SW5")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "6")
+				(pinfunction "D6_6")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "16")
+			(name "Net-(U1-D7)")
+			(class "Default")
+			(node
+				(ref "SW6")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "7")
+				(pinfunction "D7_7")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "17")
+			(name "Net-(U1-SCL)")
+			(class "Default")
+			(node
+				(ref "R6")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "19")
+				(pinfunction "SCL_19")
+				(pintype "output")
+			)
+			(node
+				(ref "U3")
+				(pin "3")
+				(pinfunction "SCL_3")
+				(pintype "input")
+			)
+			(node
+				(ref "U4")
+				(pin "3")
+				(pinfunction "SCL_3")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "18")
+			(name "Net-(U1-SDA)")
+			(class "Default")
+			(node
+				(ref "R5")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "18")
+				(pinfunction "SDA_18")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U3")
+				(pin "2")
+				(pinfunction "SDA_2")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U4")
+				(pin "2")
+				(pinfunction "SDA_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "19")
+			(name "Net-(U1-TX1)")
+			(class "Default")
+			(node
+				(ref "R10")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "1")
+				(pinfunction "TX1_1")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "20")
+			(name "Net-(U2-VOUT)")
+			(class "Default")
+			(node
+				(ref "C3")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R1")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "4")
+				(pinfunction "VOUT_4")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "21")
+			(name "unconnected-(J1-Pad1)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "22")
+			(name "unconnected-(J1-Pad3)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "3")
+				(pinfunction "3_3")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "23")
+			(name "unconnected-(U2-NC-Pad1)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "1")
+				(pinfunction "NC_1")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "24")
+			(name "unconnected-(U2-NC-Pad5)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "5")
+				(pinfunction "NC_5")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "25")
+			(name "unconnected-(U2-NC-Pad6)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "6")
+				(pinfunction "NC_6")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "26")
+			(name "unconnected-(U2-NC-Pad7)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "7")
+				(pinfunction "NC_7")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "27")
+			(name "unconnected-(U2-NC-Pad8)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "8")
+				(pinfunction "NC_8")
+				(pintype "no_connect")
+			)
+		)
+	)
+)
