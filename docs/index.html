@@ -24,6 +24,7 @@
     <li><a href="#prova">Provalo</a></li>
     <li><a href="#tecnica">Tecnica</a></li>
     <li><a href="#firmware">Firmware</a></li>
+    <li><a href="#meccanica">Stampa 3D</a></li>
     <li><a href="costruzione.html">Costruzione</a></li>
   </ul>
   <a class="bottone pieno piccolo" href="#scarica">Scarica</a>
@@ -279,6 +280,30 @@
   </div>
 </div></section>
 
+<!-- ============ MECCANICA ============ -->
+<section id="meccanica" class="confronto"><div class="wrap">
+  <div class="affianco inverso appare">
+    <div class="media"><img src="img/mec_assieme.png" alt="Modello 3D dello strumento montato" loading="lazy" style="max-height:640px;object-fit:contain;background:#1d1f21"></div>
+    <div>
+      <span class="etichetta">Stampa 3D</span>
+      <h2>Il corpo si stampa a casa</h2>
+      <p>Tutti i pezzi di plastica sono disegnati in un unico file OpenSCAD, con le misure scritte in chiaro e in italiano: chi vuole un corpo più grande, un manico diverso o un'altra disposizione dei pulsanti cambia un numero e rigenera.</p>
+      <ul class="punti">
+        <li><strong>Corpo a uovo</strong> 140 × 120 × 150 mm in due gusci, chiusi da 4 viti con inserti filettati: si apre e si richiude quante volte si vuole.</li>
+        <li><strong>Piano dei pulsanti</strong> sul davanti, <strong>pannello delle prese</strong> sul retro con le scritte incise.</li>
+        <li><strong>Colonnine per la scheda</strong> già stampate dentro il guscio, <strong>collare</strong> per il manico, <strong>testa</strong> che contiene il canale del fiato.</li>
+        <li>Sette file da stampare, circa <strong>250 g di PETG</strong>.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="galleria appare" style="margin-top:50px">
+    <figure><img src="img/mec_corpo_fronte.png" alt="Corpo dal davanti con i sei pulsanti" loading="lazy" style="object-fit:contain;background:#1d1f21"><figcaption>Davanti: sei pulsanti su due colonne.</figcaption></figure>
+    <figure><img src="img/mec_corpo_retro.png" alt="Corpo dal retro con le prese MIDI, USB e i jack" loading="lazy" style="object-fit:contain;background:#1d1f21"><figcaption>Dietro: MIDI, USB-C, sustain, espressione.</figcaption></figure>
+    <figure><img src="img/mec_spaccato.png" alt="Spaccato del corpo con la scheda" loading="lazy" style="object-fit:contain;background:#1d1f21"><figcaption>Spaccato: scheda in verticale, manico che entra dall'alto.</figcaption></figure>
+    <figure><img src="img/mec_pezzi.png" alt="Tutti i pezzi sul piatto di stampa" loading="lazy" style="object-fit:contain;background:#1d1f21"><figcaption>Tutti i pezzi, orientati per la stampa.</figcaption></figure>
+  </div>
+</div></section>
+
 <!-- ============ FIRMWARE ============ -->
 <section id="firmware"><div class="wrap appare">
   <span class="etichetta">Firmware</span>
@@ -332,7 +357,8 @@ Oppure, senza programmare: apri Teensy Loader e carica AliBreath.ino.hex</pre>
     <div class="fatto"><b>Fatto</b><span>Guida di costruzione completa, dai materiali al collaudo.</span></div>
     <div class="inprova"><b>Da provare</b><span>Firmware: compila per Teensy 4.1, ma non è ancora stato provato sullo strumento. Sensibilità e soglie andranno ritoccate al banco.</span></div>
     <div class="inprova"><b>Da provare</b><span>Circuiti stampati: verificati al computer, non ancora prodotti e montati.</span></div>
-    <div class="dafare"><b>Da fare</b><span>File 3D del corpo e dei tappi del manico.</span></div>
+    <div class="fatto"><b>Fatto</b><span>Meccanica stampabile: corpo, collare, testa, innesto del bocchino, guide del nastro. Sette file STL verificati, sorgente OpenSCAD modificabile.</span></div>
+    <div class="inprova"><b>Da provare</b><span>Pezzi stampati: verificati al computer, non ancora stampati e montati.</span></div>
     <div class="dafare"><b>Da fare</b><span>Primo prototipo e registrazioni audio vere.</span></div>
   </div>
 </div></section>
@@ -343,9 +369,10 @@ Oppure, senza programmare: apri Teensy Loader e carica AliBreath.ino.hex</pre>
   <h2>Scarica tutto</h2>
   <p>Ogni file del progetto è qui, libero. Puoi leggerlo, costruirlo, modificarlo e condividerlo. Chiediamo solo di citare il progetto e di lasciare libere anche le tue modifiche.</p>
   <div class="file">
-    <a class="grande" href="download/AliBreath-progetto-completo.zip" download><b>⬇ Progetto completo (.zip)</b><span>Schema e circuiti stampati KiCad, file di produzione, firmware, documentazione, immagini e video.</span></a>
+    <a class="grande" href="download/AliBreath-progetto-completo.zip" download><b>⬇ Progetto completo (.zip)</b><span>Schema e circuiti stampati KiCad, file di produzione, pezzi 3D, firmware, documentazione, immagini e video.</span></a>
     <a href="download/nastro-gerber.zip" download><b>Circuito del nastro</b><span>Gerber pronti per il fabbricante (ordinane 2)</span></a>
     <a href="download/scheda-gerber.zip" download><b>Scheda principale</b><span>Gerber pronti per il fabbricante</span></a>
+    <a href="download/AliBreath-stampa-3d.zip" download><b>Pezzi da stampare in 3D</b><span>7 file STL e il sorgente OpenSCAD</span></a>
     <a href="download/AliBreath-circuiti-kicad.zip" download><b>Circuiti stampati KiCad</b><span>file .kicad_pcb e script che li generano</span></a>
     <a href="costruzione.html"><b>Guida di costruzione</b><span>materiali, montaggio, collaudo</span></a>
     <a href="download/AliBreath.ino"><b>Firmware sorgente</b><span>AliBreath.ino, da leggere o modificare</span></a>

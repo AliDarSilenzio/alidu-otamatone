@@ -20,6 +20,7 @@ nastro capacitivo sotto una lastra protettiva, senza contatto.
 | `firmware/AliBreath/AliBreath.ino` | Firmware per Teensy 4.1 (Arduino / Teensyduino) |
 | `hardware/nastro/` | Circuito stampato del nastro delle note (60 elettrodi in due metà uguali) |
 | `hardware/scheda/` | Circuito stampato della scheda principale |
+| `hardware/meccanica/` | Pezzi stampabili in 3D: sorgente OpenSCAD, 7 file STL, immagini |
 | `hardware/produci.sh` | Rigenera i circuiti, li verifica (DRC) e prepara Gerber e immagini |
 | `docs/costruzione.html` | Guida di costruzione completa |
 | `AliBreath.kicad_sch`, `.kicad_sym`, `.kicad_pro` | Schema elettrico KiCad, revisione 4 |
@@ -51,7 +52,8 @@ arduino-cli compile --fqbn teensy:avr:teensy41:usb=midi firmware/AliBreath
 - ✅ Circuiti stampati del nastro e della scheda principale: DRC KiCad 0 errori, 0 collegamenti mancanti
 - ✅ Guida di costruzione
 - ⏳ Circuiti da produrre e montare
-- ⏳ File 3D del corpo e primo prototipo
+- ✅ Meccanica stampabile (OpenSCAD → 7 STL)
+- ⏳ Stampa, montaggio e primo prototipo
 
 Foto e video nel sito sono immagini concettuali generate al computer: il
 prototipo fisico non è ancora stato costruito.

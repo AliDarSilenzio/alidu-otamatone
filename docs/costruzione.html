@@ -63,7 +63,7 @@ figure figcaption{font-size:.82rem;color:#77757d;margin-top:8px}
     <li><a href="#fiato">Il canale del fiato</a></li>
     <li><a href="#scheda">La scheda principale</a></li>
     <li><a href="#cavi">I cablaggi</a></li>
-    <li><a href="#manico">Manico e corpo</a></li>
+    <li><a href="#manico">Manico e corpo (3D)</a></li>
     <li><a href="#collaudo">Collaudo e taratura</a></li>
     <li><a href="#guasti">Se qualcosa non va</a></li>
   </ol>
@@ -141,8 +141,9 @@ figure figcaption{font-size:.82rem;color:#77757d;margin-top:8px}
     <tr><td>Pulsanti</td><td>Interruttori a tasto meccanici a lunga durata (tipo Cherry MX) con cappucci rotondi in metallo</td><td>6</td></tr>
     <tr><td>USB</td><td>Prolunga da pannello USB-C femmina → micro-USB maschio, 20–30 cm</td><td>1</td></tr>
     <tr><td>Manico</td><td>Profilato in alluminio a U 35 × 35 × 2 mm, lungo 600 mm</td><td>1</td></tr>
-    <tr><td>Corpo</td><td>Due gusci stampati in 3D (PETG) oppure una sfera cava in legno o resina, Ø 130–150 mm</td><td>1</td></tr>
-    <tr><td>Viteria</td><td>Distanziali M3 × 10 mm con viti, per la scheda</td><td>4</td></tr>
+    <tr><td>Pezzi stampati</td><td>Corpo (2 gusci), collare, testa con coperchio, innesto del bocchino, 4 guide del nastro: file STL nel capitolo 9. Circa 250 g di PETG</td><td>1 serie</td></tr>
+    <tr><td>Inserti</td><td>Inserti filettati M3 a caldo, Ø esterno 4 mm, lunghi 5–6 mm</td><td>18</td></tr>
+    <tr><td>Viti</td><td>M3 × 16 (giunzione) ×4 · M3 × 10 (collare) ×4 · M3 × 6 (scheda e coperchio) ×8 · grani M3 × 6 ×2</td><td>18</td></tr>
   </table>
   <div class="consiglio"><b>Sui pulsanti.</b> Scegli un modello di cui il produttore dichiari la durata in milioni di azionamenti e verifica la scheda tecnica del modello esatto. I pulsanti anti-vandalo da pannello sono robusti, ma spesso durano meno dei tasti meccanici da tastiera.</div>
 </section>
@@ -292,7 +293,11 @@ figure figcaption{font-size:.82rem;color:#77757d;margin-top:8px}
 <!-- ================================================================ -->
 <section class="capitolo" id="manico">
   <h2>Manico e corpo</h2>
-  <p>Il manico è un profilato di alluminio a U. Dentro corrono i due circuiti del nastro, i cavi e il tubo del fiato; sopra, a filo, la copertura di vetro.</p>
+  <p>Il manico è un profilato di alluminio a U. Dentro corrono i due circuiti del nastro, i cavi e il tubo del fiato; sopra, a filo, la copertura di vetro. Tutto il resto si stampa in 3D: il corpo a uovo in due gusci, il collare che regge il manico, la testa con il canale del fiato.</p>
+  <div class="scelta">
+    <figure class="pcb scuro"><img src="img/mec_assieme.png" alt="Lo strumento montato: corpo a uovo, collare, manico con il vetro, testa e bocchino" loading="lazy"><figcaption>Lo strumento montato, dal davanti. Alto circa 80 cm con il bocchino.</figcaption></figure>
+    <figure class="pcb scuro"><img src="img/mec_spaccato.png" alt="Spaccato del corpo: la scheda in verticale sulle colonnine, il manico che entra dall'alto" loading="lazy"><figcaption>Spaccato del corpo: la scheda sta in verticale sulle sue quattro colonnine, il manico entra dall'alto e si ferma 4 mm sopra di lei.</figcaption></figure>
+  </div>
   <svg viewBox="0 0 900 300" role="img" aria-label="Sezione del manico: profilato a U in alluminio, circuito del nastro, biadesivo, vetro" style="margin-top:24px">
     <g font-family="Inter" font-size="13">
       <path d="M260 60 v200 h300 v-200 h-12 v188 h-276 v-188z" fill="#8a8f96"/>
@@ -301,31 +306,49 @@ figure figcaption{font-size:.82rem;color:#77757d;margin-top:8px}
       <rect x="276" y="64" width="268" height="12" fill="#2c5a3a"/>
       <rect x="290" y="76" width="16" height="10" fill="#555"/><rect x="514" y="76" width="16" height="10" fill="#555"/>
       <rect x="350" y="150" width="120" height="24" rx="12" fill="#3a3a44" stroke="#666"/>
-      <circle cx="320" cy="200" r="10" fill="#1d2a33" stroke="#9ad"/>
       <rect x="400" y="200" width="100" height="10" rx="3" fill="#777"/>
       <g fill="#ecebe8">
         <text x="590" y="56">vetro temperato 2 mm, 35 mm di larghezza</text>
         <text x="590" y="76">biadesivo trasparente, senza bolle</text>
         <text x="590" y="96">circuito del nastro 1,6 mm, largo 27 mm</text>
-        <text x="590" y="166">cavo piatto e cavi I2C</text>
-        <text x="590" y="208">tubo del fiato e cavo dei pulsanti</text>
+        <text x="590" y="166">cavo piatto, cavi I2C e del fiato</text>
+        <text x="590" y="208">cavo dei pulsanti verso la testa</text>
         <text x="590" y="250">profilato U 35 × 35 × 2 mm, collegato a massa</text>
       </g>
       <g stroke="#5d5b63"><line x1="572" y1="52" x2="585" y2="52"/><line x1="546" y1="62" x2="585" y2="72"/><line x1="546" y1="70" x2="585" y2="92"/><line x1="472" y1="162" x2="585" y2="162"/><line x1="502" y1="205" x2="585" y2="205"/><line x1="562" y1="246" x2="585" y2="246"/></g>
       <text x="230" y="85" fill="#a3a1a8" text-anchor="end">2 mm d'aria per lato</text>
-      <text x="230" y="102" fill="#a3a1a8" text-anchor="end">fra circuito e alluminio</text>
+      <text x="230" y="102" fill="#a3a1a8" text-anchor="end">(guide stampate)</text>
     </g>
   </svg>
+
+  <h3>I pezzi da stampare</h3>
+  <figure class="pcb scuro"><img src="img/mec_pezzi.png" alt="Tutti i pezzi stampati disposti come vanno sul piatto della stampante" loading="lazy"><figcaption>Tutti i pezzi, già orientati come vanno sul piatto.</figcaption></figure>
+  <table class="dati">
+    <tr><th>File</th><th>Che cos'è · come stamparlo</th></tr>
+    <tr><td>corpo_anteriore.stl</td><td>Guscio davanti, con il piano dei 6 pulsanti. Giunzione sul piatto. Supporti ad albero, solo dal piatto, sotto il piano dei pulsanti. Circa 105 g.</td></tr>
+    <tr><td>corpo_posteriore.stl</td><td>Guscio dietro: pannello delle prese con le scritte incise, 4 colonnine per la scheda, aletta di centraggio. Come il precedente. Circa 120 g.</td></tr>
+    <tr><td>collare.stl</td><td>Regge il manico sopra il corpo. Flangia sul piatto, senza supporti.</td></tr>
+    <tr><td>testa.stl</td><td>Chiude il manico in alto e contiene camera della condensa, raccordo a T, sensore. Zoccolo sul piatto; il soffitto interno è un ponte di 41 mm: se la tua stampante fa ponti brutti, attiva i supporti.</td></tr>
+    <tr><td>testa_coperchio.stl</td><td>Sportello posteriore della testa. Piatto, senza supporti.</td></tr>
+    <tr><td>innesto_bocchino.stl</td><td>Tubetto da 13 mm su cui calza il bocchino, come il collo di un sassofono, con il portagomma per il tubo da 3 mm. In piedi, senza supporti.</td></tr>
+    <tr><td>guida_nastro.stl</td><td>Listello 245 × 2 × 6 mm che tiene il circuito staccato dall'alluminio. Stampane 4.</td></tr>
+  </table>
+  <div class="consiglio"><b>Impostazioni consigliate:</b> PETG (più resistente al calore e agli urti del PLA), strato 0,2 mm, 4 perimetri, riempimento gyroid al 30–40%. Il PLA va bene per le prove, ma in un'auto d'estate si deforma.</div>
+  <div class="consiglio"><b>Vuoi cambiare le misure?</b> Apri <code>hardware/meccanica/alidu_otamatone.scad</code> con OpenSCAD, che è gratuito. Tutte le misure sono in cima al file, con un nome in italiano: larghezza del corpo, spessore delle pareti, misura del manico, posizione della scheda. Cambiale e rilancia <code>produci_stl.sh</code>.</div>
+
+  <h3>Montaggio</h3>
   <ol class="passi">
-    <li><strong>Taglia il profilato</strong> a 600 mm e sbava bene i bordi. Sulle due ali superiori, che reggeranno il vetro, passa una lima fine: devono essere perfettamente dritte.</li>
+    <li><strong>Inserti filettati.</strong> Con il saldatore a 220–240 °C, meglio con una punta apposita, premi gli inserti M3 nei fori ciechi: 4 per la scheda e 4 per la giunzione nel guscio posteriore, 4 nel piano superiore (2 per guscio), 2 nel collare per i grani, 4 nella testa per il coperchio. Fermati quando l'inserto è a filo: se lo spingi oltre, la vite non tiene.</li>
+    <li><strong>Taglia il profilato</strong> a 600 mm e sbava bene i bordi. Sulle due ali che reggono il vetro passa una lima fine: devono essere perfettamente dritte.</li>
     <li><strong>Collega l'alluminio a massa</strong> con un filo e un capocorda sotto una vite. Il manico diventa uno schermo: la mano che lo tiene da dietro non disturba il nastro.</li>
-    <li><strong>Prepara due guide</strong> di plastica larghe 2 mm lungo le pareti interne: tengono il circuito centrato, staccato di 2 mm dall'alluminio. Se il rame stesse a contatto o troppo vicino al metallo, perderebbe sensibilità.</li>
-    <li><strong>Incolla il gruppo nastro più vetro</strong> sulle ali del profilato con un filo di silicone neutro trasparente o di colla epossidica elastica. Il vetro poggia sulle ali, il circuito sta sospeso sotto di lui.</li>
-    <li><strong>Le linguette</strong> con i connettori stanno alle due estremità, fuori dal vetro: fissale con le viti M2,5 e coprile con due tappi stampati in 3D. La Craft A sta nella testa superiore, sotto il bocchino; la Craft B nel corpo.</li>
-    <li><strong>Il corpo</strong> è una sfera cava di 130–150 mm, in due gusci. Fori: 16 mm per la presa DIN, 9,5 mm per i jack, un'asola per la presa USB-C, e 6 fori per i pulsanti, in colonna sul fronte. La scheda principale si avvita sul guscio posteriore con i distanziali M3.</li>
-    <li><strong>Unione manico–corpo:</strong> un collare stampato in 3D, incollato al profilato e avvitato al guscio. Deve reggere la leva dello strumento tenuto in mano: fai pareti di almeno 3 mm e riempimento al 40%.</li>
+    <li><strong>Incolla le guide</strong> lungo le pareti interne: tengono il circuito centrato, 2 mm lontano dall'alluminio. Se il rame stesse troppo vicino al metallo, perderebbe sensibilità.</li>
+    <li><strong>Incolla il gruppo nastro più vetro</strong> sulle ali del profilato con un filo di silicone neutro trasparente o di colla epossidica elastica. Il vetro poggia sulle ali, il circuito sta sospeso sotto di lui. Le linguette con i connettori restano alle due estremità, fuori dal vetro.</li>
+    <li><strong>La testa.</strong> Incolla l'innesto nel foro in cima, con il portagomma verso l'interno. Dentro sistema camera della condensa, raccordo a T, sensore e vite dello sfiato; l'uscita dello sfiato è il foro sul fianco. Calza la testa sul manico e chiudi lo sportello. La Craft A sta nel manico, sotto la testa.</li>
+    <li><strong>Pannelli del corpo.</strong> Monta pulsanti, presa MIDI, jack e prolunga USB-C nei loro fori. Per la USB-C, segna e fora i due fori delle viti secondo il modello che hai comprato: le misure cambiano da un produttore all'altro.</li>
+    <li><strong>Scheda.</strong> Avvitala sulle colonnine del guscio posteriore, componenti verso il davanti, e collega tutti i cavi JST prima di chiudere.</li>
+    <li><strong>Collare e manico.</strong> Avvita il collare al piano superiore con 4 viti M3 × 10. Infila il manico finché si ferma (22 mm dentro il corpo) e stringi i due grani.</li>
+    <li><strong>Chiudi il corpo:</strong> l'aletta del guscio posteriore entra nel guscio anteriore; 4 viti M3 × 16 dal davanti.</li>
   </ol>
-  <div class="consiglio"><b>I file 3D del corpo non ci sono ancora.</b> Sono il prossimo passo del progetto. Le misure qui sopra bastano per costruirne uno a mano o per disegnarlo con un programma di modellazione.</div>
 </section>
 
 <!-- ================================================================ -->

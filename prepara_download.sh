@@ -17,6 +17,7 @@ zip -q -r "$D/AliBreath-circuiti-kicad.zip" hardware/produci.sh \
   hardware/nastro/genera_nastro.py hardware/nastro/nastro.kicad_pcb hardware/nastro/nastro.kicad_pro \
   hardware/scheda/genera_scheda.py hardware/scheda/scheda.kicad_pcb hardware/scheda/scheda.kicad_pro \
   hardware/scheda/scheda_posizioni.csv licenze/CERN-OHL-S-2.0.txt
+(cd hardware/meccanica && zip -q -r "../../$D/AliBreath-stampa-3d.zip" alidu_otamatone.scad produci_stl.sh stl immagini -x '*.DS_Store')
 zip -q "$D/AliBreath-kicad.zip" AliBreath.kicad_pro AliBreath.kicad_sch \
   AliBreath.kicad_sym AliBreath.kicad_prl AliBreath.net sym-lib-table \
   fp-lib-table genera_kicad.py SCHEMA_ELETTRICO.md licenze/CERN-OHL-S-2.0.txt
