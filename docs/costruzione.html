@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Costruire Alidu Otamatone — guida completa</title>
+<meta name="description" content="Guida passo passo per costruire Alidu Otamatone: materiali, ordine dei circuiti stampati, nastro capacitivo sotto vetro o acetato, canale del fiato, scheda principale, cablaggi, manico e collaudo.">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="stile.css">
+<style>
+.guida{display:grid;grid-template-columns:230px 1fr;gap:56px;padding-top:110px}
+.indice{position:sticky;top:84px;align-self:start;font-size:.88rem}
+.indice ol{list-style:none;counter-reset:c;border-left:1px solid var(--linea)}
+.indice li{counter-increment:c}
+.indice a{display:block;padding:7px 0 7px 16px;color:var(--tenue);text-decoration:none;border-left:2px solid transparent;margin-left:-1px}
+.indice a::before{content:counter(c,decimal-leading-zero) "  ";color:#5d5b63;font-family:"Space Grotesk"}
+.indice a:hover,.indice a.qui{color:var(--testo);border-color:var(--rame)}
+@media(max-width:900px){.guida{grid-template-columns:1fr;gap:20px}.indice{position:static}}
+.capitolo{padding:0 0 90px}
+.capitolo h2{font-size:clamp(1.8rem,3.6vw,2.6rem)}
+.capitolo h3{margin-top:38px}
+.capitolo p{margin-top:12px}
+ol.passi{list-style:none;counter-reset:p;margin-top:18px}
+ol.passi>li{counter-increment:p;position:relative;padding:14px 0 14px 52px;border-top:1px solid var(--linea);color:var(--tenue)}
+ol.passi>li::before{content:counter(p);position:absolute;left:0;top:12px;width:32px;height:32px;border-radius:50%;background:var(--bg3);color:var(--rame);display:grid;place-items:center;font:600 .9rem "Space Grotesk"}
+ol.passi strong{color:var(--testo)}
+.avviso,.consiglio{border-radius:14px;padding:16px 20px;margin-top:20px;font-size:.93rem}
+.avviso{background:rgba(240,138,122,.08);border:1px solid rgba(240,138,122,.35);color:#f4c2b9}
+.consiglio{background:rgba(232,161,90,.07);border:1px solid rgba(232,161,90,.3);color:#f0d2b0}
+.avviso b,.consiglio b{color:var(--testo)}
+.dati td:first-child{white-space:normal}
+.scelta{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+@media(max-width:700px){.scelta{grid-template-columns:1fr}}
+.pcb{background:#f3f2ee;border-radius:14px;padding:10px;margin-top:20px}
+.pcb.scuro{background:var(--bg2);border:1px solid var(--linea)}
+figure figcaption{font-size:.82rem;color:#77757d;margin-top:8px}
+</style>
+</head>
+<body>
+
+<nav id="nav" class="scorso"><div class="wrap">
+  <a class="marchio" href="index.html"><i></i>Alidu Otamatone</a>
+  <ul>
+    <li><a href="index.html">Il progetto</a></li>
+    <li><a href="index.html#tecnica">Tecnica</a></li>
+    <li><a href="index.html#firmware">Firmware</a></li>
+  </ul>
+  <a class="bottone pieno piccolo" href="index.html#scarica">Scarica</a>
+</div></nav>
+
+<div class="wrap guida">
+<aside class="indice">
+  <span class="etichetta">Guida di costruzione</span>
+  <ol>
+    <li><a href="#prima">Prima di iniziare</a></li>
+    <li><a href="#materiali">Materiali</a></li>
+    <li><a href="#ordinare">Ordinare i circuiti</a></li>
+    <li><a href="#nastro">Il nastro delle note</a></li>
+    <li><a href="#copertura">Vetro o acetato</a></li>
+    <li><a href="#fiato">Il canale del fiato</a></li>
+    <li><a href="#scheda">La scheda principale</a></li>
+    <li><a href="#cavi">I cablaggi</a></li>
+    <li><a href="#manico">Manico e corpo</a></li>
+    <li><a href="#collaudo">Collaudo e taratura</a></li>
+    <li><a href="#guasti">Se qualcosa non va</a></li>
+  </ol>
+</aside>
+
+<main>
+
+<!-- ================================================================ -->
+<section class="capitolo" id="prima">
+  <span class="etichetta">Guida di costruzione</span>
+  <h2>Costruire Alidu Otamatone</h2>
+  <p>Questa guida porta dai file al primo suono. È scritta per chi ha già saldato qualche componente, ma spiega ogni passaggio. Calcola due o tre fine settimana: uno per i circuiti, uno per la meccanica, uno per il collaudo.</p>
+  <h3>Attrezzi</h3>
+  <ul class="punti">
+    <li><strong>Saldatore a temperatura regolabile</strong> (330–350 °C), stagno 0,7 mm con flussante, treccia dissaldante.</li>
+    <li><strong>Tester (multimetro)</strong> con la prova di continuità che suona.</li>
+    <li><strong>Pinza crimpatrice per JST XH</strong>, oppure cavetti JST già crimpati (più semplice).</li>
+    <li>Tronchesino, spellafili, cacciaviti, trapano con punte da 3, 9,5, 12 e 16 mm, lima.</li>
+    <li>Un computer con Arduino IDE e Teensyduino per il firmware.</li>
+  </ul>
+  <div class="avviso"><b>Il Teensy 4.1 funziona a 3,3 V.</b> Nessun suo piedino deve mai ricevere 5 V: si rompe. Tutti i partitori dello schema servono proprio a questo. Non saltarli e non scambiare i cavi dei connettori.</div>
+</section>
+
+<!-- ================================================================ -->
+<section class="capitolo" id="materiali">
+  <h2>Materiali</h2>
+  <p>Le quantità sono per uno strumento. I componenti sono comuni: si trovano dai grandi distributori di elettronica e nei negozi online.</p>
+
+  <h3>Scheda principale</h3>
+  <table class="dati">
+    <tr><th>Sigla</th><th>Componente</th><th>Q.tà</th></tr>
+    <tr><td>—</td><td>Circuito stampato "scheda" (file <code>scheda-gerber.zip</code>)</td><td>1</td></tr>
+    <tr><td>U1</td><td>Teensy 4.1, con i pin già saldati o con due strisce maschio 1×24</td><td>1</td></tr>
+    <tr><td>—</td><td>Strisce femmina 1×24 passo 2,54 mm (zoccolo: il Teensy resta estraibile)</td><td>2</td></tr>
+    <tr><td>R1 R3 R5 R6</td><td>Resistore 4,7 kΩ 1%, a strato metallico, ¼ W</td><td>4</td></tr>
+    <tr><td>R2 R4</td><td>Resistore 12 kΩ 1%</td><td>2</td></tr>
+    <tr><td>R7</td><td>Resistore 1 kΩ</td><td>1</td></tr>
+    <tr><td>R8</td><td>Resistore 100 kΩ</td><td>1</td></tr>
+    <tr><td>R9</td><td>Resistore 33 Ω</td><td>1</td></tr>
+    <tr><td>R10</td><td>Resistore 10 Ω</td><td>1</td></tr>
+    <tr><td>C1 C4 C6</td><td>Condensatore ceramico 100 nF, passo 5 mm</td><td>3</td></tr>
+    <tr><td>C2</td><td>Condensatore ceramico 1 µF, passo 5 mm</td><td>1</td></tr>
+    <tr><td>C3</td><td>Condensatore ceramico 1 nF, passo 5 mm</td><td>1</td></tr>
+    <tr><td>C5</td><td>Condensatore elettrolitico 10 µF 16 V, Ø 5 mm, passo 2 mm</td><td>1</td></tr>
+    <tr><td>J5</td><td>Connettore JST XH 2 poli verticale (B2B-XH-A)</td><td>1</td></tr>
+    <tr><td>J1 J4 J7</td><td>Connettore JST XH 3 poli (B3B-XH-A)</td><td>3</td></tr>
+    <tr><td>J2 J3</td><td>Connettore JST XH 4 poli (B4B-XH-A)</td><td>2</td></tr>
+    <tr><td>J6</td><td>Connettore JST XH 7 poli (B7B-XH-A)</td><td>1</td></tr>
+    <tr><td>—</td><td>Spine JST XH corrispondenti con contatti, o cavetti già crimpati</td><td>7</td></tr>
+  </table>
+
+  <h3>Nastro delle note</h3>
+  <table class="dati">
+    <tr><th>Parte</th><th>Componente</th><th>Q.tà</th></tr>
+    <tr><td>Circuito</td><td>Circuito stampato "nastro" (file <code>nastro-gerber.zip</code>): ne servono 2 uguali</td><td>2</td></tr>
+    <tr><td>Lettori</td><td>Bela Trill Craft</td><td>2</td></tr>
+    <tr><td>Connettori</td><td>Striscia maschio 2×15 passo 2,54 mm</td><td>2</td></tr>
+    <tr><td>Cavo</td><td>Cavo piatto 30 poli passo 1,27 mm + 2 connettori femmina IDC 2×15</td><td>2 × 15 cm</td></tr>
+    <tr><td>Copertura</td><td>Vetro temperato 2 mm, 505 × 35 mm, bordi molati, <em>oppure</em> foglio di acetato o PET 0,2–0,5 mm</td><td>1</td></tr>
+    <tr><td>Adesivo</td><td>Biadesivo trasparente a trasferimento (tipo OCA o 3M 467MP), 25 mm</td><td>2 m</td></tr>
+    <tr><td>Fissaggio</td><td>Viti M2,5 × 8 con dadi, per le linguette</td><td>4</td></tr>
+  </table>
+
+  <h3>Fiato, pannello e meccanica</h3>
+  <table class="dati">
+    <tr><th>Parte</th><th>Componente</th><th>Q.tà</th></tr>
+    <tr><td>Sensore</td><td>Modulo MPXV7002DP (3 pin: VCC, GND, OUT)</td><td>1</td></tr>
+    <tr><td>Bocchino</td><td>Bocchino per controller a fiato o per sassofono contralto in plastica, lavabile</td><td>1</td></tr>
+    <tr><td>Tubo</td><td>Tubo in silicone alimentare 3 × 5 mm</td><td>50 cm</td></tr>
+    <tr><td>Raccordi</td><td>Raccordo a T e raccordo diritto per tubo da 3 mm</td><td>1 + 1</td></tr>
+    <tr><td>Condensa</td><td>Piccolo filtro in linea trasparente (tipo acquario) o contenitore da 10 ml con tappo di scarico</td><td>1</td></tr>
+    <tr><td>Sfiato</td><td>Vite M3 a punta conica in un blocchetto forato (sfiato regolabile)</td><td>1</td></tr>
+    <tr><td>MIDI</td><td>Presa DIN 5 poli 180° da pannello</td><td>1</td></tr>
+    <tr><td>Pedali</td><td>Presa jack 6,35 mono da pannello (sustain) e stereo (espressione)</td><td>1 + 1</td></tr>
+    <tr><td>Pulsanti</td><td>Interruttori a tasto meccanici a lunga durata (tipo Cherry MX) con cappucci rotondi in metallo</td><td>6</td></tr>
+    <tr><td>USB</td><td>Prolunga da pannello USB-C femmina → micro-USB maschio, 20–30 cm</td><td>1</td></tr>
+    <tr><td>Manico</td><td>Profilato in alluminio a U 35 × 35 × 2 mm, lungo 600 mm</td><td>1</td></tr>
+    <tr><td>Corpo</td><td>Due gusci stampati in 3D (PETG) oppure una sfera cava in legno o resina, Ø 130–150 mm</td><td>1</td></tr>
+    <tr><td>Viteria</td><td>Distanziali M3 × 10 mm con viti, per la scheda</td><td>4</td></tr>
+  </table>
+  <div class="consiglio"><b>Sui pulsanti.</b> Scegli un modello di cui il produttore dichiari la durata in milioni di azionamenti e verifica la scheda tecnica del modello esatto. I pulsanti anti-vandalo da pannello sono robusti, ma spesso durano meno dei tasti meccanici da tastiera.</div>
+</section>
+
+<!-- ================================================================ -->
+<section class="capitolo" id="ordinare">
+  <h2>Ordinare i circuiti stampati</h2>
+  <p>I circuiti sono due: il <strong>nastro</strong>, che legge il dito, e la <strong>scheda</strong>, che porta il Teensy. Per ciascuno c'è un file .zip con tutti i file di produzione (Gerber e forature): è quello che vogliono i fabbricanti.</p>
+  <figure class="pcb scuro"><img src="img/pcb_nastro_fronte.png" alt="Circuito del nastro, lato davanti: 30 elettrodi a freccia e la linguetta con il connettore" loading="lazy"><figcaption>Nastro, lato davanti: 30 elettrodi a freccia su 250 mm, e la linguetta con il connettore 2×15. Misure: 298 × 27 mm.</figcaption></figure>
+  <figure class="pcb scuro"><img src="img/pcb_nastro_retro.png" alt="Circuito del nastro, lato dietro: 30 piste che portano al connettore" loading="lazy"><figcaption>Nastro, lato dietro: le 30 piste corrono parallele fino al connettore.</figcaption></figure>
+  <div class="scelta">
+    <figure class="pcb scuro"><img src="img/pcb_scheda_fronte.png" alt="Scheda principale vista dall'alto" loading="lazy"><figcaption>Scheda principale, 110 × 72 mm: Teensy a sinistra, connettori sui bordi.</figcaption></figure>
+    <figure class="pcb scuro"><img src="img/pcb_scheda_retro.png" alt="Scheda principale vista da sotto" loading="lazy"><figcaption>Lato dietro: piste e piano di massa.</figcaption></figure>
+  </div>
+  <ol class="passi">
+    <li><strong>Scarica i due pacchetti</strong> dalla pagina dei download: <code>nastro-gerber.zip</code> e <code>scheda-gerber.zip</code>. Non aprirli: si caricano così come sono.</li>
+    <li><strong>Apri il sito di un fabbricante</strong> di circuiti stampati (JLCPCB, PCBWay, Aisler, Eurocircuits…) e carica il primo zip. Il sito legge da solo misure e strati.</li>
+    <li><strong>Imposta le opzioni:</strong> 2 strati, spessore 1,6 mm, rame 1 oz (35 µm), finitura HASL senza piombo, foratura minima 0,3 mm. Il colore è libero: sotto il vetro un circuito nero è il più elegante.</li>
+    <li><strong>Quantità.</strong> Il minimo d'ordine è di solito 5 pezzi. Per il nastro ne servono 2 per strumento: con 5 ne avanzano 3 di scorta, oppure per un secondo strumento.</li>
+    <li><strong>Per il nastro chiedi di non stampare il numero d'ordine</strong> sul lato degli elettrodi (opzione "rimuovi numero d'ordine" o "posizione specificata"). Sotto il vetro si vedrebbe.</li>
+    <li><strong>Ripeti per la scheda principale.</strong> Controlla il preventivo: un circuito lungo come il nastro, quasi 30 cm, può costare un po' più del solito.</li>
+  </ol>
+  <div class="consiglio"><b>Vuoi modificarli?</b> Apri <code>hardware/nastro/nastro.kicad_pcb</code> o <code>hardware/scheda/scheda.kicad_pcb</code> con KiCad: si aprono nell'<b>editor dei circuiti stampati</b>, non nello schema. Meglio ancora, cambia le misure negli script <code>genera_nastro.py</code> e <code>genera_scheda.py</code> e rilancia <code>hardware/produci.sh</code>: rigenera, controlla e impacchetta tutto da solo.</div>
+</section>
+
+<!-- ================================================================ -->
+<section class="capitolo" id="nastro">
+  <h2>Il nastro delle note</h2>
+  <p>Il nastro è fatto di <strong>due circuiti identici</strong> messi in fila, 250 mm di zona sensibile ciascuno: 500 mm in tutto, 60 elettrodi. Il secondo circuito si monta <strong>ruotato di mezzo giro</strong>, così le due linguette con il connettore finiscono alle estremità del manico. Al centro, dove i circuiti si toccano, gli elettrodi continuano senza interruzione.</p>
+  <svg viewBox="0 0 900 150" role="img" aria-label="Disposizione dei due circuiti del nastro nel manico" style="margin-top:24px">
+    <rect x="10" y="40" width="70" height="60" rx="4" fill="#22303a" stroke="#4a6070"/>
+    <text x="45" y="74" fill="#cfe" font-size="12" text-anchor="middle" font-family="Space Grotesk">Craft A</text>
+    <rect x="90" y="40" width="40" height="60" fill="#1d3a2a" stroke="#3c6"/>
+    <rect x="130" y="40" width="320" height="60" fill="#2c3b25" stroke="#3c6"/>
+    <rect x="450" y="40" width="320" height="60" fill="#2c3b25" stroke="#3c6"/>
+    <rect x="770" y="40" width="40" height="60" fill="#1d3a2a" stroke="#3c6"/>
+    <rect x="820" y="40" width="70" height="60" rx="4" fill="#22303a" stroke="#4a6070"/>
+    <text x="855" y="74" fill="#cfe" font-size="12" text-anchor="middle" font-family="Space Grotesk">Craft B</text>
+    <text x="290" y="76" fill="#e8a15a" font-size="15" text-anchor="middle" font-family="Space Grotesk">metà A · posizioni 0–29</text>
+    <text x="610" y="76" fill="#e8a15a" font-size="15" text-anchor="middle" font-family="Space Grotesk">metà B (ruotata) · 30–59</text>
+    <text x="130" y="28" fill="#a3a1a8" font-size="12" font-family="Inter">← verso il bocchino: note gravi</text>
+    <text x="770" y="28" fill="#a3a1a8" font-size="12" text-anchor="end" font-family="Inter">verso il corpo: note acute →</text>
+    <line x1="450" y1="34" x2="450" y2="108" stroke="#f08a7a" stroke-dasharray="3 3"/>
+    <text x="450" y="126" fill="#f08a7a" font-size="12" text-anchor="middle" font-family="Inter">giunzione: 1 mm, nessun buco</text>
+  </svg>
+  <ol class="passi">
+    <li><strong>Controlla i circuiti appena arrivati.</strong> Con il tester in continuità verifica che due elettrodi vicini <em>non</em> suonino fra loro. Poi verifica che ogni elettrodo arrivi al suo piedino del connettore: l'elettrodo più vicino alla linguetta va al piedino 1 (quello quadrato), il più lontano al 30. Per raggiungere il rame bisogna grattare un puntino di vernice: fallo solo sul bordo, mai al centro di un elettrodo.</li>
+    <li><strong>Salda il connettore 2×15.</strong> Infila la striscia <strong>dal retro</strong>, cioè dal lato delle piste, e salda dal davanti. Il lato degli elettrodi deve restare piatto per incollarci il vetro. Taglia i pin a filo e lima le punte.</li>
+    <li><strong>Prepara i cavi piatti.</strong> Chiudi un connettore IDC 2×15 a ogni estremità di 15 cm di cavo piatto, con il filo rosso dalla parte del piedino 1 (lo indica la freccia sul connettore). Il filo 1 è il canale 0, il filo 2 il canale 1, e così via fino al filo 30, canale 29.</li>
+    <li><strong>Collega ogni cavo alla sua Trill Craft.</strong> Salda i 30 fili ai 30 canali, nell'ordine: filo 1 → canale 0, filo 30 → canale 29. Segui le scritte stampate sulla tua Craft, non la posizione dei piedini, perché la disposizione può cambiare fra le versioni della scheda. In alternativa si salda una striscia 2×15 sulla Craft e il cavo si innesta.</li>
+    <li><strong>Imposta gli indirizzi.</strong> La Craft della metà A resta com'è (indirizzo 0x30). Sulla Craft della metà B chiudi con una goccia di stagno il ponticello dell'indirizzo, per passare a 0x31. Controlla sulla scheda quale piazzola corrisponde: il firmware ha bisogno di due indirizzi diversi.</li>
+    <li><strong>Prova subito, prima di incollare.</strong> Collega una sola Craft al Teensy (3,3 V, massa, SDA sul piedino 18, SCL sul 19). In Arduino apri <em>File → Esempi → Trill → craft-print</em> e caricalo. Nel monitor seriale tocca gli elettrodi uno per uno: deve salire un solo numero per volta, nell'ordine. Ripeti con l'altra Craft.</li>
+  </ol>
+  <div class="avviso"><b>Il cavo piatto non va allungato.</b> Più è lungo, più "sente" la mano anche lontano dal nastro. Tienilo sotto i 20 cm, fermalo dentro il manico e non farlo passare vicino ai cavi MIDI.</div>
+</section>
+
+<!-- ================================================================ -->
+<section class="capitolo" id="copertura">
+  <h2>Vetro o acetato?</h2>
+  <p>Il circuito è lo stesso nei due casi: gli elettrodi sono già isolati dalla vernice del circuito stampato. La copertura serve a proteggerli e a dare al dito una superficie liscia su cui scivolare.</p>
+  <div class="scelta">
+    <div class="carta"><span class="numero">ACETATO · 0,2–0,5 MM</span><h3>Più sensibile, si cambia</h3><p>Il segnale è più forte e il nastro risponde anche al tocco più leggero. L'acetato però si riga con gli anni: si stacca e se ne incolla uno nuovo, che costa pochi centesimi. Va bene anche per i primi prototipi.</p><p><strong>Sensibilità di partenza nel firmware: 2.</strong></p></div>
+    <div class="carta"><span class="numero">VETRO TEMPERATO · 2 MM</span><h3>Eterno</h3><p>Il vetro temperato non si riga con l'uso normale, non teme sudore né detergenti, e fa scivolare il dito meglio di qualsiasi plastica. Il segnale è più debole, ma la Trill Craft lo legge senza problemi alzando la sensibilità.</p><p><strong>Sensibilità di partenza nel firmware: 3–4.</strong></p></div>
+  </div>
+  <div class="consiglio"><b>Meglio evitare plexiglass e policarbonato</b> come superficie definitiva: si rigano molto più del vetro. Vanno bene per fare prove.</div>
+  <h3>Incollare la copertura</h3>
+  <ol class="passi">
+    <li><strong>Sgrassa</strong> il lato degli elettrodi e la copertura con alcol isopropilico. Lavora in una stanza senza polvere: ogni granello diventa una bolla.</li>
+    <li><strong>Accosta i due circuiti</strong> su un piano dritto, uno ruotato rispetto all'altro, con le zone degli elettrodi che si toccano al centro. Tienili allineati con una riga.</li>
+    <li><strong>Stendi il biadesivo trasparente</strong> a strisce sovrapposte di 1 mm su tutta la zona degli elettrodi. Passa un rullino di gomma dal centro verso i bordi.</li>
+    <li><strong>Appoggia la copertura</strong> partendo da un'estremità e abbassandola lentamente, per spingere fuori l'aria. Rullino di nuovo, con decisione.</li>
+    <li><strong>Controlla controluce:</strong> non devono restare bolle sopra gli elettrodi. L'aria, anche in uno strato sottile, abbassa molto la sensibilità proprio in quel punto.</li>
+  </ol>
+  <h3>Trovare la sensibilità giusta</h3>
+  <p>Apri l'esempio <em>craft-settings</em> della libreria Trill: permette di cambiare la sensibilità dal monitor seriale e vedere subito l'effetto. Scegli il valore più basso con cui un dito appoggiato con leggerezza dà un segnale netto su 2–3 elettrodi. Poi scrivilo in cima al firmware, in <code>SENSIBILITA</code>.</p>
+</section>
+
+<!-- ================================================================ -->
+<section class="capitolo" id="fiato">
+  <h2>Il canale del fiato</h2>
+  <p>Il soffio entra nel bocchino, lascia la condensa in una piccola camera, e arriva a un raccordo a T. Da una parte c'è il sensore, che sta in un ramo chiuso e misura solo la pressione. Dall'altra c'è lo <strong>sfiato</strong>, da cui l'aria esce. Lo sfiato è la parte che decide come "risponde" lo strumento.</p>
+  <svg viewBox="0 0 900 190" role="img" aria-label="Percorso dell'aria: bocchino, camera della condensa, raccordo a T, sensore e sfiato regolabile" style="margin-top:24px">
+    <g font-family="Space Grotesk" font-size="13" fill="#ecebe8" text-anchor="middle">
+      <path d="M20 70 l60 -14 v48 l-60 -14z" fill="#333" stroke="#777"/><text x="55" y="135">bocchino</text>
+      <line x1="80" y1="80" x2="200" y2="80" stroke="#9ad" stroke-width="6"/>
+      <rect x="200" y="45" width="90" height="80" rx="10" fill="#1d2a33" stroke="#9ad"/><text x="245" y="150">camera condensa</text>
+      <rect x="236" y="125" width="18" height="16" fill="#555"/><text x="245" y="172" fill="#a3a1a8" font-size="11">tappo di scarico</text>
+      <line x1="290" y1="80" x2="470" y2="80" stroke="#9ad" stroke-width="6"/>
+      <circle cx="480" cy="80" r="12" fill="#2a2a33" stroke="#9ad"/><text x="480" y="120">raccordo a T</text>
+      <line x1="492" y1="80" x2="700" y2="80" stroke="#9ad" stroke-width="6"/>
+      <rect x="700" y="55" width="110" height="50" rx="6" fill="#2a1e12" stroke="#e8a15a"/><text x="755" y="85" fill="#e8a15a">sensore</text>
+      <text x="600" y="68" fill="#a3a1a8" font-size="11">ramo chiuso: solo pressione</text>
+      <line x1="480" y1="68" x2="480" y2="20" stroke="#9ad" stroke-width="6"/>
+      <rect x="455" y="4" width="50" height="18" rx="3" fill="#333" stroke="#e8a15a"/><text x="590" y="18" fill="#e8a15a">sfiato regolabile → aria fuori</text>
+    </g>
+  </svg>
+  <ol class="passi">
+    <li><strong>Il sensore.</strong> Usa il modulo MPXV7002DP già montato, con tre pin. Delle due bocchette, quella marcata <em>P1</em> (pressione) va al tubo. L'altra (<em>P2</em>) resta <strong>aperta all'aria</strong>: così il sensore compensa da solo la pressione atmosferica. Collega il modulo al connettore FIATO (J1): 1 = VCC (5 V), 2 = massa, 3 = uscita.</li>
+    <li><strong>La camera della condensa.</strong> Il respiro è umido e la saliva prima o poi arriva. La camera, trasparente, sta subito dopo il bocchino e un po' più in basso: l'acqua si ferma lì e si scarica dal tappo. Il sensore, in un ramo chiuso dopo il T, non viene mai attraversato dal flusso e resta asciutto.</li>
+    <li><strong>Lo sfiato regolabile.</strong> Fora un blocchetto di plastica da 1,5 mm e avvita trasversalmente una vite M3 a punta conica che chiude più o meno il foro. Aperto, si soffia molto e la pressione sale poco; chiuso, basta un filo d'aria per arrivare al massimo.</li>
+    <li><strong>Tubi corti.</strong> Usa tubo in silicone alimentare 3 × 5 mm, il più corto possibile, senza pieghe strette. Fissa i raccordi con un giro di filo o con fascette piccole.</li>
+    <li><strong>Regolazione.</strong> A firmware caricato, soffia a pieno fiato come in un forte musicale: la dinamica deve arrivare quasi al massimo, ma non incollarsi a 127. Se ci arriva subito, apri lo sfiato; se non ci arriva mai, chiudilo. Se nemmeno con lo sfiato tutto aperto riesci a non saturare, il sensore da ±2 kPa è troppo sensibile per il tuo modo di soffiare: il modello MPXV7007DP (±7 kPa) è il fratello maggiore, ma controlla piedinatura e misure prima di cambiarlo.</li>
+  </ol>
+  <div class="consiglio"><b>Igiene.</b> Il bocchino è personale. Si stacca, si lava con acqua tiepida e sapone neutro, e si lascia asciugare. La camera della condensa si svuota a ogni fine sessione.</div>
+</section>
+
+<!-- ================================================================ -->
+<section class="capitolo" id="scheda">
+  <h2>La scheda principale</h2>
+  <figure class="pcb scuro"><img src="img/pcb_scheda_3d.png" alt="Vista tridimensionale della scheda principale" loading="lazy"><figcaption>La scheda principale montata, prima di inserire il Teensy.</figcaption></figure>
+  <p>Si salda dai componenti più bassi ai più alti: così la scheda resta appoggiata bene sul piano mentre lavori.</p>
+  <ol class="passi">
+    <li><strong>Resistori.</strong> Leggi il valore di ognuno con il tester prima di saldarlo: i colori a cinque anelli ingannano facilmente. R1, R3, R5, R6 da 4,7 kΩ; R2, R4 da 12 kΩ; R7 1 kΩ; R8 100 kΩ; R9 33 Ω; R10 10 Ω.</li>
+    <li><strong>Condensatori ceramici</strong> C1, C2, C3, C4, C6: non hanno un verso.</li>
+    <li><strong>Condensatore elettrolitico C5:</strong> ha un verso. Il terminale lungo (+) va nel foro con il segno +, la fascia chiara sul corpo indica il −.</li>
+    <li><strong>Le due strisce femmina 1×24</strong> per il Teensy. Trucco: infilale sui pin del Teensy, appoggia il tutto sulla scheda e salda prima un pin per angolo. Così restano perfettamente dritte e parallele. Poi togli il Teensy e salda tutti gli altri.</li>
+    <li><strong>I connettori JST XH.</strong> Hanno un dentino da un lato: orientali come il disegno sulla serigrafia. Saldali bene, perché sono loro a sopportare gli strappi dei cavi.</li>
+    <li><strong>Controllo prima di accendere.</strong> Senza Teensy, con il tester: fra 5 V e massa (piedini 1 e 2 del connettore FIATO) e fra 3,3 V e massa (piedini 1 e 4 dei connettori TRILL) <strong>non deve esserci continuità</strong>. Se il tester suona, c'è un cortocircuito: cerca una goccia di stagno fra due piazzole.</li>
+    <li><strong>Inserisci il Teensy</strong> con la presa USB verso il bordo della scheda, il piedino GND nell'angolo con la piazzola quadrata.</li>
+  </ol>
+  <div class="consiglio"><b>Perché lo zoccolo.</b> Se fra dieci anni il Teensy si guasta, lo sfili e ne metti un altro senza dissaldare niente. È una delle scelte che fanno durare lo strumento.</div>
+</section>
+
+<!-- ================================================================ -->
+<section class="capitolo" id="cavi">
+  <h2>I cablaggi</h2>
+  <p>Ogni parte montata sul guscio arriva alla scheda con un cavetto e una spina JST XH, che scatta e non si sfila. Il piedino 1 è quello marcato sulla serigrafia.</p>
+  <table class="dati">
+    <tr><th>Connettore</th><th>Piedini</th></tr>
+    <tr><td>J1 · FIATO</td><td>1 = 5 V · 2 = massa · 3 = uscita del sensore</td></tr>
+    <tr><td>J2 · TRILL A</td><td>1 = 3,3 V · 2 = SDA · 3 = SCL · 4 = massa → Craft della metà A (0x30)</td></tr>
+    <tr><td>J3 · TRILL B</td><td>uguale a J2 → Craft della metà B (0x31)</td></tr>
+    <tr><td>J4 · MIDI</td><td>1 → piedino 4 della DIN · 2 → piedino 5 · 3 → piedino 2 (massa). I piedini 1 e 3 della DIN restano liberi</td></tr>
+    <tr><td>J5 · SUSTAIN</td><td>1 = punta del jack · 2 = corpo (massa)</td></tr>
+    <tr><td>J6 · PULSANTI</td><td>1 Ottava − · 2 Ottava + · 3 Suono − · 4 Suono + · 5 Shift · 6 Neg. harmony · 7 massa comune a tutti</td></tr>
+    <tr><td>J7 · ESPRESSIONE</td><td>1 = punta · 2 = anello · 3 = corpo (cablaggio Roland)</td></tr>
+  </table>
+  <div class="avviso"><b>Pedali di espressione Yamaha</b> hanno punta e anello invertiti rispetto ai Roland. Prova il tuo pedale con il tester prima di saldare: fra anello e corpo deve esserci la resistenza fissa del potenziometro.</div>
+  <div class="avviso"><b>La presa DIN si legge dal retro.</b> I numeri dei piedini MIDI non sono in ordine lungo il semicerchio: l'ordine è 1–4–2–5–3. Quasi tutte le prese hanno i numeri stampati accanto ai terminali: fidati di quelli.</div>
+  <ul class="punti">
+    <li><strong>Pulsanti:</strong> un terminale di ciascuno va al suo filo su J6, l'altro terminale di tutti e sei va a un unico filo di massa, il 7.</li>
+    <li><strong>USB:</strong> la prolunga da pannello va dalla presa USB-C sul guscio alla presa micro-USB del Teensy. Fermala con una fascetta, così gli strappi non arrivano mai al Teensy.</li>
+    <li><strong>Trill Craft:</strong> collega 3,3 V, massa, SDA e SCL secondo le scritte sulla Craft, che non sono per forza nello stesso ordine del connettore J2.</li>
+  </ul>
+</section>
+
+<!-- ================================================================ -->
+<section class="capitolo" id="manico">
+  <h2>Manico e corpo</h2>
+  <p>Il manico è un profilato di alluminio a U. Dentro corrono i due circuiti del nastro, i cavi e il tubo del fiato; sopra, a filo, la copertura di vetro.</p>
+  <svg viewBox="0 0 900 300" role="img" aria-label="Sezione del manico: profilato a U in alluminio, circuito del nastro, biadesivo, vetro" style="margin-top:24px">
+    <g font-family="Inter" font-size="13">
+      <path d="M260 60 v200 h300 v-200 h-12 v188 h-276 v-188z" fill="#8a8f96"/>
+      <rect x="250" y="44" width="320" height="16" rx="2" fill="#9fd0e6" opacity=".55" stroke="#bfe3f2"/>
+      <rect x="276" y="60" width="268" height="4" fill="#f3c38f"/>
+      <rect x="276" y="64" width="268" height="12" fill="#2c5a3a"/>
+      <rect x="290" y="76" width="16" height="10" fill="#555"/><rect x="514" y="76" width="16" height="10" fill="#555"/>
+      <rect x="350" y="150" width="120" height="24" rx="12" fill="#3a3a44" stroke="#666"/>
+      <circle cx="320" cy="200" r="10" fill="#1d2a33" stroke="#9ad"/>
+      <rect x="400" y="200" width="100" height="10" rx="3" fill="#777"/>
+      <g fill="#ecebe8">
+        <text x="590" y="56">vetro temperato 2 mm, 35 mm di larghezza</text>
+        <text x="590" y="76">biadesivo trasparente, senza bolle</text>
+        <text x="590" y="96">circuito del nastro 1,6 mm, largo 27 mm</text>
+        <text x="590" y="166">cavo piatto e cavi I2C</text>
+        <text x="590" y="208">tubo del fiato e cavo dei pulsanti</text>
+        <text x="590" y="250">profilato U 35 × 35 × 2 mm, collegato a massa</text>
+      </g>
+      <g stroke="#5d5b63"><line x1="572" y1="52" x2="585" y2="52"/><line x1="546" y1="62" x2="585" y2="72"/><line x1="546" y1="70" x2="585" y2="92"/><line x1="472" y1="162" x2="585" y2="162"/><line x1="502" y1="205" x2="585" y2="205"/><line x1="562" y1="246" x2="585" y2="246"/></g>
+      <text x="230" y="85" fill="#a3a1a8" text-anchor="end">2 mm d'aria per lato</text>
+      <text x="230" y="102" fill="#a3a1a8" text-anchor="end">fra circuito e alluminio</text>
+    </g>
+  </svg>
+  <ol class="passi">
+    <li><strong>Taglia il profilato</strong> a 600 mm e sbava bene i bordi. Sulle due ali superiori, che reggeranno il vetro, passa una lima fine: devono essere perfettamente dritte.</li>
+    <li><strong>Collega l'alluminio a massa</strong> con un filo e un capocorda sotto una vite. Il manico diventa uno schermo: la mano che lo tiene da dietro non disturba il nastro.</li>
+    <li><strong>Prepara due guide</strong> di plastica larghe 2 mm lungo le pareti interne: tengono il circuito centrato, staccato di 2 mm dall'alluminio. Se il rame stesse a contatto o troppo vicino al metallo, perderebbe sensibilità.</li>
+    <li><strong>Incolla il gruppo nastro più vetro</strong> sulle ali del profilato con un filo di silicone neutro trasparente o di colla epossidica elastica. Il vetro poggia sulle ali, il circuito sta sospeso sotto di lui.</li>
+    <li><strong>Le linguette</strong> con i connettori stanno alle due estremità, fuori dal vetro: fissale con le viti M2,5 e coprile con due tappi stampati in 3D. La Craft A sta nella testa superiore, sotto il bocchino; la Craft B nel corpo.</li>
+    <li><strong>Il corpo</strong> è una sfera cava di 130–150 mm, in due gusci. Fori: 16 mm per la presa DIN, 9,5 mm per i jack, un'asola per la presa USB-C, e 6 fori per i pulsanti, in colonna sul fronte. La scheda principale si avvita sul guscio posteriore con i distanziali M3.</li>
+    <li><strong>Unione manico–corpo:</strong> un collare stampato in 3D, incollato al profilato e avvitato al guscio. Deve reggere la leva dello strumento tenuto in mano: fai pareti di almeno 3 mm e riempimento al 40%.</li>
+  </ol>
+  <div class="consiglio"><b>I file 3D del corpo non ci sono ancora.</b> Sono il prossimo passo del progetto. Le misure qui sopra bastano per costruirne uno a mano o per disegnarlo con un programma di modellazione.</div>
+</section>
+
+<!-- ================================================================ -->
+<section class="capitolo" id="collaudo">
+  <h2>Collaudo e taratura</h2>
+  <ol class="passi">
+    <li><strong>Carica il firmware</strong> seguendo la pagina principale (scheda Teensy 4.1, tipo USB: MIDI). Accendi senza toccare il nastro e senza soffiare: nel primo secondo lo strumento misura il suo "zero".</li>
+    <li><strong>Apri un monitor MIDI</strong> sul computer: un'applicazione che mostra i messaggi in arrivo, oppure il programma musicale che usi già. Lo strumento appare come "Teensy MIDI".</li>
+    <li><strong>Pulsanti:</strong> premi Suono + e Suono −: devono arrivare messaggi di cambio programma. Con un synth collegato, il suono cambia.</li>
+    <li><strong>Fiato:</strong> soffia piano e poi forte. Il controllo 2 (fiato) deve salire e scendere con il soffio, da 0 a vicino a 127. Regola lo sfiato come spiegato sopra.</li>
+    <li><strong>Nastro:</strong> appoggia il dito e soffia. Deve partire una nota; scivolando, arrivano messaggi di pitch bend. Dal bocchino verso il corpo l'intonazione deve salire. Se scende, hai scambiato i cavi delle due Craft, oppure gli indirizzi.</li>
+    <li><strong>Imposta il synth:</strong> escursione del pitch bend a ±12 semitoni (il firmware la invia da solo, ma non tutti i synth la accettano) e il controllo 2 o l'11 sul volume o sul filtro.</li>
+    <li><strong>Ritocca le impostazioni</strong> in cima al firmware: <code>SOGLIA_TOCCO</code> se il nastro sente il dito troppo presto o troppo tardi, <code>FIATO_ACCESO</code> e <code>FIATO_SPENTO</code> per la soglia del soffio, <code>FIATO_CURVA</code> per la risposta.</li>
+  </ol>
+</section>
+
+<!-- ================================================================ -->
+<section class="capitolo" id="guasti">
+  <h2>Se qualcosa non va</h2>
+  <table class="dati">
+    <tr><th>Sintomo</th><th>Causa probabile e rimedio</th></tr>
+    <tr><td>Nessuna nota, il nastro non risponde</td><td>Le Craft non rispondono sul bus I2C. Carica l'esempio <em>detect-all-devices</em> della libreria Trill: deve trovarne due, a 0x30 e 0x31. Se ne trova una sola, controlla il ponticello dell'indirizzo.</td></tr>
+    <tr><td>La nota salta a gradini</td><td>Una bolla sotto il vetro, oppure un elettrodo non collegato. Con <em>craft-print</em> controlla che ogni canale risponda.</td></tr>
+    <tr><td>Il nastro sente la mano a distanza</td><td>Sensibilità troppo alta, oppure cavo piatto troppo lungo o vicino alla mano. Abbassa <code>SENSIBILITA</code> o accorcia il cavo.</td></tr>
+    <tr><td>Al centro del nastro c'è un punto morto</td><td>Le due metà sono troppo distanti alla giunzione. Devono quasi toccarsi (1 mm).</td></tr>
+    <tr><td>Il fiato resta "acceso" senza soffiare</td><td>Lo zero si è spostato. Shift + Neg. harmony ricalibra. Se capita spesso, la condensa sta arrivando al sensore: controlla la camera.</td></tr>
+    <tr><td>Il fiato arriva subito al massimo</td><td>Sfiato troppo chiuso: aprilo.</td></tr>
+    <tr><td>Il MIDI su DIN non arriva, su USB sì</td><td>Presa DIN cablata a rovescio (piedini 4 e 5 scambiati), oppure R9 e R10 invertite.</td></tr>
+    <tr><td>Note che restano accese</td><td>Shift + Neg. harmony manda "tutte le note spente".</td></tr>
+  </table>
+  <div class="azioni" style="margin-top:40px">
+    <a class="bottone pieno" href="index.html#scarica">Scarica tutti i file</a>
+    <a class="bottone" href="index.html">Torna al progetto</a>
+  </div>
+</section>
+
+</main>
+</div>
+
+<footer><div class="wrap">
+  <span>Alidu Otamatone · progetto di Dario Amabile</span>
+  <span>Guida sotto licenza CC BY-SA 4.0</span>
+</div></footer>
+
+<script>
+// evidenzia nell'indice il capitolo che si sta leggendo
+const voci = [...document.querySelectorAll('.indice a')];
+const capitoli = [...document.querySelectorAll('.capitolo')];
+function aggiornaIndice() {
+  let qui = capitoli[0];
+  for (const c of capitoli) if (c.getBoundingClientRect().top < innerHeight * 0.4) qui = c;
+  voci.forEach(a => a.classList.toggle('qui', a.getAttribute('href') === '#' + qui.id));
+}
+addEventListener('scroll', aggiornaIndice, {passive:true});
+aggiornaIndice();
+</script>
+</body>
+</html>

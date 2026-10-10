@@ -40,6 +40,10 @@ const uint8_t  TRILL_ADDR_1      = 0x30;   // Craft, ponticello ADR aperto
 const uint8_t  TRILL_ADDR_2      = 0x31;   // Craft, ponticello ADR chiuso
 const int      SOGLIA_TOCCO      = 180;    // somma minima dei valori diff
 const uint8_t  N_ELETTRODI       = 60;
+// Sensibilita' del nastro (prescaler Trill, 1..8). Dipende dalla copertura:
+// acetato 0,1-0,5 mm -> prova 2 ; vetro 2 mm -> prova 3-4 ; vetro 3 mm -> 4-5.
+// Il valore giusto si trova con l'esempio "craft-settings" della libreria Trill.
+const uint8_t  SENSIBILITA       = 3;
 
 // ----------------------------------------------------------------------------
 //  PIEDINI (rev. 4)
@@ -143,7 +147,7 @@ static bool avviaCraft(Trill &t, uint8_t addr) {
   delay(10);
   t.setMode(Trill::DIFF);       // valori gia' sottratti della linea di base
   delay(10);
-  t.setPrescaler(3);            // sensibilita' adatta a 2 mm di policarbonato
+  t.setPrescaler(SENSIBILITA);
   delay(10);
   t.setNoiseThreshold(30);
   delay(10);
@@ -161,8 +165,13 @@ static void leggiCraft(Trill &t, int *dest) {
 
 // Restituisce la posizione 0..1 lungo il nastro, oppure -1 se non toccato.
 static float leggiNastro() {
+  // Meta' A (0x30): linguetta in alto, canale n = posizione n.
+  // Meta' B (0x31): stesso circuito montato ruotato, linguetta verso il corpo:
+  // il canale n e' la posizione 59 - n.
+  static int b[30];
   leggiCraft(craft1, diffVal);
-  leggiCraft(craft2, diffVal + 30);
+  leggiCraft(craft2, b);
+  for (int n = 0; n < 30; n++) diffVal[59 - n] = b[n];
   int imax = 0, somma = 0;
   for (int i = 0; i < N_ELETTRODI; i++) {
     if (diffVal[i] > diffVal[imax]) imax = i;

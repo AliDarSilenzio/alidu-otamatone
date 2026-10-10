@@ -12,6 +12,11 @@ cp firmware/AliBreath/AliBreath.ino firmware/build/AliBreath.ino.hex \
    AliBreath_schema.pdf SCHEMA_ELETTRICO.md "$D/"
 
 rm -f "$D"/*.zip
+cp hardware/nastro/nastro-gerber.zip hardware/scheda/scheda-gerber.zip "$D/"
+zip -q -r "$D/AliBreath-circuiti-kicad.zip" hardware/produci.sh \
+  hardware/nastro/genera_nastro.py hardware/nastro/nastro.kicad_pcb hardware/nastro/nastro.kicad_pro \
+  hardware/scheda/genera_scheda.py hardware/scheda/scheda.kicad_pcb hardware/scheda/scheda.kicad_pro \
+  hardware/scheda/scheda_posizioni.csv licenze/CERN-OHL-S-2.0.txt
 zip -q "$D/AliBreath-kicad.zip" AliBreath.kicad_pro AliBreath.kicad_sch \
   AliBreath.kicad_sym AliBreath.kicad_prl AliBreath.net sym-lib-table \
   fp-lib-table genera_kicad.py SCHEMA_ELETTRICO.md licenze/CERN-OHL-S-2.0.txt
@@ -19,5 +24,5 @@ zip -q -r "$D/AliBreath-progetto-completo.zip" README.md SCHEMA_ELETTRICO.md \
   AliBreath.kicad_pro AliBreath.kicad_sch AliBreath.kicad_sym AliBreath.kicad_prl \
   AliBreath.net sym-lib-table fp-lib-table genera_kicad.py AliBreath_schema.pdf \
   firmware/AliBreath firmware/build/AliBreath.ino.hex licenze docs/img docs/video \
-  -x '*.DS_Store'
+  docs/costruzione.html hardware -x '*.DS_Store' -x '*.kicad_prl' -x '*.dsn' -x '*.ses' -x '*/produzione/*'
 ls -la "$D"
