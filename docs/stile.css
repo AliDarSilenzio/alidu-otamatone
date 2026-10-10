@@ -162,3 +162,4 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .appare{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
 .appare.visto{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.appare{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+.galleria figure.verticale img,.galleria figure.verticale video{object-fit:contain;background:#0d0d10}

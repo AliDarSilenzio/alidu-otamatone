@@ -6,7 +6,7 @@
 //    openscad -D 'pezzo="corpo_anteriore"' -o corpo_anteriore.stl alidu_otamatone.scad
 //  Pezzi: corpo_anteriore, corpo_posteriore, collare, testa, testa_coperchio,
 //         innesto_bocchino, guida_nastro
-//  Viste (non si stampano): assieme, corpo, spaccato, tavola
+//  Viste (non si stampano): assieme, esploso, corpo, spaccato, tavola
 //
 //  Assi: X = larghezza, Y = profondita' (+Y = davanti, verso chi guarda),
 //        Z = altezza. Misure in millimetri.
@@ -29,6 +29,7 @@ SPESS_TOP = 8;   // spessore del piano superiore (accoglie gli inserti)
 MANICO = 35;     // profilato a U 35 x 35
 GIOCO = 0.4;
 INSERIMENTO = 22;  // quanto il manico entra nel corpo, sotto il piano superiore
+VETRO = 2.2;       // spessore del vetro sul davanti del profilato, con gioco
 
 /* [Scheda principale 110 x 72] */
 SCHEDA = [110, 72];
@@ -162,9 +163,10 @@ module collare() {
                 translate([-50, -50, 0]) cube([100, 100, 5]);
             }
             // manicotto
-            translate([-(MANICO + 8) / 2, -(MANICO + 8) / 2, 0]) cube([MANICO + 8, MANICO + 8, COLLARE_H]);
+            translate([-(MANICO + 8) / 2, -(MANICO + 8) / 2, 0]) cube([MANICO + 8, MANICO + 8 + VETRO, COLLARE_H]);
         }
-        translate([-(MANICO + GIOCO) / 2, -(MANICO + GIOCO) / 2, -eps]) cube([MANICO + GIOCO, MANICO + GIOCO, COLLARE_H + 1]);
+        // sede del profilato, piu' profonda sul davanti dove passa il vetro
+        translate([-(MANICO + GIOCO) / 2, -(MANICO + GIOCO) / 2, -eps]) cube([MANICO + GIOCO, MANICO + GIOCO + VETRO, COLLARE_H + 1]);
         for (v = VITI_COLLARE) translate([v[0], v[1], -eps]) {
             cylinder(d = 3.4, h = 6);
             translate([0, 0, 2.5]) cylinder(d = 6.5, h = 6);
@@ -230,20 +232,91 @@ module guida_nastro() {   // due per meta' nastro: tengono il circuito a 2 mm da
 }
 
 // ---------------------------------------------------------------- assieme
+// ------------------------------------------- parti non stampate (solo per le viste)
+Z_MANICO = TOP_Z - INSERIMENTO;          // fondo del manico
+Z_VETRO = [Z_MANICO + 48, Z_MANICO + 48 + 505];
 module scheda_fantasma() {
-    color("darkgreen", 0.9) translate([-SCHEDA[0] / 2, SCHEDA_Y, -SCHEDA[1] / 2]) cube([SCHEDA[0], 1.6, SCHEDA[1]]);
+    translate([-SCHEDA[0] / 2, SCHEDA_Y, -SCHEDA[1] / 2]) {
+        color("darkgreen") cube([SCHEDA[0], 1.6, SCHEDA[1]]);
+        color("seagreen") translate([7, 1.6, 4]) cube([18, 12, 61 > SCHEDA[1] - 6 ? SCHEDA[1] - 8 : 61]);   // Teensy
+        color("white") for (z = [8, 22, 36, 50, 62]) translate([SCHEDA[0] - 16, 1.6, z]) cube([6, 7, 9]);  // JST
+    }
 }
+module nastro_fantasma() {        // due meta' del nastro sotto il vetro: frecce di rame
+    P = 250 / 30; D = 0.9 * P; w = 12.5;
+    color([0.12, 0.13, 0.12]) translate([-13.5, MANICO / 2 - 1.8, Z_VETRO[0]]) cube([27, 1.6, 505]);
+    for (meta = [0, 1]) for (k = [1 : 29]) {
+        zc = Z_VETRO[0] + 2 + meta * 252 + k * P;
+        verso = meta == 0 ? -1 : 1;      // la meta' B e' montata ruotata
+        color([0.85, 0.5, 0.25]) translate([0, MANICO / 2 - 0.15, 0])
+            for (s = [-1, 1]) hull() {
+                translate([0, 0, zc + verso * D / 2]) rotate([90, 0, 0]) cylinder(d = 0.7, h = 0.1, $fn = 8);
+                translate([s * w, 0, zc - verso * D / 2]) rotate([90, 0, 0]) cylinder(d = 0.7, h = 0.1, $fn = 8);
+            }
+    }
+}
+module tasti() {
+    color([0.78, 0.8, 0.83]) for (x = [-PASSO_MX / 2, PASSO_MX / 2], z = [-PASSO_MX, 0, PASSO_MX])
+        translate([x, PIANO_Y - 0.5, z]) rotate([-90, 0, 0]) cylinder(d1 = 16, d2 = 15, h = 7);
+}
+module prese() {
+    color([0.75, 0.76, 0.78]) {
+        translate([-14, -PIANO_Y + 0.5, 10]) rotate([90, 0, 0]) difference() { cylinder(d = 21, h = 2); cylinder(d = 15, h = 5, center = true); }
+        for (x = [-12, 12]) translate([x, -PIANO_Y + 0.5, -14]) rotate([90, 0, 0]) difference() { cylinder(d = 13, h = 2.5, $fn = 6); cylinder(d = 6.5, h = 6, center = true); }
+    }
+    color([0.1, 0.1, 0.1]) {
+        translate([-14, -PIANO_Y + 1, 10]) rotate([90, 0, 0]) cylinder(d = 15, h = 0.6);
+        translate([14, -PIANO_Y + 0.4, 10]) cube([9, 1, 3.2], center = true);
+    }
+}
+module bocchino() {               // bocchino tipo sassofono contralto
+    color([0.06, 0.06, 0.06]) hull() {
+        cylinder(d = 21, h = 30);
+        translate([0, 3, 66]) scale([1, 0.32, 1]) sphere(d = 16);
+        translate([0, -1, 40]) scale([1, 0.75, 1]) cylinder(d = 19, h = 6);
+    }
+    color([0.7, 0.7, 0.72]) translate([0, 0, 8]) cylinder(d = 23, h = 6);   // fascetta
+}
+module manico_completo(z0 = Z_MANICO) {
+    color([0.78, 0.79, 0.8]) translate([-MANICO / 2, -MANICO / 2, z0]) difference() {
+        cube([MANICO, MANICO, 600]);
+        translate([2, 2, -1]) cube([MANICO - 4, MANICO, 602]);
+    }
+    translate([0, 0, z0 - Z_MANICO]) {
+        nastro_fantasma();
+        color([0.05, 0.07, 0.08], 0.55) translate([-MANICO / 2, MANICO / 2, Z_VETRO[0]]) cube([MANICO, 2, 505]);
+    }
+}
+Z_TESTA = Z_MANICO + 600 - ZOCCOLO;
 module assieme() {
     color("white") corpo_anteriore();
     color("gainsboro") corpo_posteriore();
+    tasti(); prese();
     scheda_fantasma();
-    color("dimgray") translate([0, 0, TOP_Z]) collare();
-    // manico, vetro, testa
-    color("silver") translate([-MANICO / 2, -MANICO / 2, TOP_Z - SPESS_TOP - INSERIMENTO + SPESS_TOP])
-        cube([MANICO, MANICO, 600]);
-    color("black", 0.6) translate([-MANICO / 2, MANICO / 2, TOP_Z + 60]) cube([MANICO, 2, 505]);
-    color("dimgray") translate([0, 0, TOP_Z - INSERIMENTO + 600 - ZOCCOLO + 2]) testa();
-    color("black") translate([0, 0, TOP_Z - INSERIMENTO + 600 - ZOCCOLO + 2 + TESTA[2] - 4]) innesto_bocchino();
+    color([0.25, 0.26, 0.28]) translate([0, 0, TOP_Z]) collare();
+    manico_completo();
+    color([0.25, 0.26, 0.28]) translate([0, 0, Z_TESTA]) testa();
+    color([0.25, 0.26, 0.28]) translate([0, -TESTA[1] / 2, Z_TESTA + ZOCCOLO + 2]) testa_coperchio();
+    color("black") translate([0, 0, Z_TESTA + TESTA[2] - 4]) innesto_bocchino();
+    translate([0, 0, Z_TESTA + TESTA[2] + 14]) bocchino();
+}
+module esploso() {                // le parti allontanate lungo il loro asse di montaggio
+    color("white") translate([0, 70, 0]) corpo_anteriore();
+    translate([0, 110, 0]) tasti();
+    color("gainsboro") translate([0, -90, 0]) { corpo_posteriore(); prese(); }
+    translate([0, -20, 0]) scheda_fantasma();
+    color([0.25, 0.26, 0.28]) translate([0, 0, TOP_Z + 50]) collare();
+    // manico aperto: profilato, circuito del nastro, vetro, ciascuno staccato
+    translate([0, 0, 140]) {
+        color([0.78, 0.79, 0.8]) translate([-MANICO / 2, -MANICO / 2, Z_MANICO]) difference() {
+            cube([MANICO, MANICO, 600]); translate([2, 2, -1]) cube([MANICO - 4, MANICO, 602]); }
+        translate([0, 45, 0]) nastro_fantasma();
+        color([0.05, 0.07, 0.08], 0.5) translate([-MANICO / 2, MANICO / 2 + 90, Z_VETRO[0]]) cube([MANICO, 2, 505]);
+    }
+    color([0.25, 0.26, 0.28]) translate([0, 0, Z_TESTA + 220]) testa();
+    color([0.25, 0.26, 0.28]) translate([0, -TESTA[1] / 2 - 40, Z_TESTA + 220 + ZOCCOLO + 2]) testa_coperchio();
+    color("black") translate([0, 0, Z_TESTA + 220 + TESTA[2] + 30]) innesto_bocchino();
+    translate([0, 0, Z_TESTA + 220 + TESTA[2] + 110]) bocchino();
 }
 
 // ---------------------------------------------------------------- scelta
@@ -254,6 +327,8 @@ else if (pezzo == "testa") testa();
 else if (pezzo == "testa_coperchio") rotate([90, 0, 0]) testa_coperchio();
 else if (pezzo == "innesto_bocchino") innesto_bocchino();
 else if (pezzo == "guida_nastro") guida_nastro();
+else if (pezzo == "esploso") esploso();
+else if (pezzo == "esploso_orizzontale") rotate([0, 90, 0]) esploso();
 else if (pezzo == "spaccato") intersection() { assieme(); translate([-400, -200, -200]) cube([400, 400, 1200]); }
 else if (pezzo == "corpo") { color("white") corpo_anteriore(); color("gainsboro") corpo_posteriore(); scheda_fantasma(); color("dimgray") translate([0, 0, TOP_Z]) collare(); }
 else if (pezzo == "tavola") {          // tutti i pezzi come vanno sul piatto, per le immagini
